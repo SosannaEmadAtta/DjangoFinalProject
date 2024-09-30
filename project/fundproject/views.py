@@ -46,6 +46,7 @@ def create_project(request):
             return redirect('list_project')
     else:
         return redirect(f'/login')
+
         # return render(request, 'project/project_list.html', context)
 
 
@@ -275,9 +276,7 @@ def add_rate(request, id):
 
 
 # --------------------------------- Search Function-----------------------------------------
-# we use Q objects to make more complex queries following
-# Use | (OR) operator to search for only one field. For example, when searching title | content, both don’t have to be true, only one is okay, when searching for a word such as “python”, so it(python) doesn’t have to be contained in both title and content fields
-# https://stackpython.medium.com/django-search-with-q-objects-tutorial-9c701db74e0e
+
 def search(request):
     project_list = []
     if request.method == 'POST':

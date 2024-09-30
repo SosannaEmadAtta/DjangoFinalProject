@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+
+{% for p in prod %}
+    <div>
+        <h4>name : {{ p.name }}</h4>
+        <h4>price : {{ p.price }}</h4>
+        <div>
+            <button>
+                details
+            </button>
+             <button onclick="window.location.href='{% url 'cart:add_to_cart' p.id %}'">
+               Add_to_cart
+            </button>
+        </div>
+    </div>
+
+{% endfor %}
+
+</body>
+</html>

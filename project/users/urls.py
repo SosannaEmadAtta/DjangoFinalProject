@@ -27,7 +27,7 @@ urlpatterns = [
     path('userproject/<int:id>' , views.userproject , name="userproject"),
     path('userdonation/<int:id>' , views.userdonation , name="userdonation"),
     path('users', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('cart_api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     # path('logout/',views.logout_view,name='logout'),
     #  path('profile',views.user_profile,name="profile"),
 

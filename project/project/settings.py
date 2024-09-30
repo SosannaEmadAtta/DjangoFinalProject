@@ -45,6 +45,11 @@ INSTALLED_APPS = [
     'rest_framework',
     "mathfilters",
     'fundapi.apps.FundapiConfig',
+    'product',
+    'product_api',
+    'cart',
+    'cart_api',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -55,9 +60,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    # other origins can be added here
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
     {

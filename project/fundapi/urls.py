@@ -10,5 +10,5 @@ router.register(r'projectListView' , projectListView)
 urlpatterns = [
     path('', include(router.urls)),
    # path('' , views.test , name='test' )
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('cart_api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

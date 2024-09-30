@@ -1,0 +1,50 @@
+<!-- templates/cart/cart_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Your Cart</h1>
+
+        {% if cart_items %}
+            <table border="3">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>inc</th>
+                        <th>dec</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                        <tr>
+                            <td>{{ item.product_id }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>${{ item.price_total|floatformat:2 }}</td>
+                            <td>
+                                 <button onclick="location.href='{% url 'cart:inc_quantity' item.product_id %}'">+</button>
+                            </td>
+                            <td>
+                                <button onclick="location.href='{% url 'cart:dec_quantity' item.product_id %}'">-</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h3>Total: ${{ total_price|floatformat:2 }}</h3>
+        {% else %}
+            <p>Your cart is empty.</p>
+        {% endif %}
+
+    </div>
+</body>
+</html>ml>

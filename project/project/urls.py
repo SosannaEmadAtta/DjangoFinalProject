@@ -28,6 +28,10 @@ urlpatterns = [
     path('project/', include('fundproject.urls')),
     path('fundapi/', include('fundapi.urls')),
     re_path('^', include('django.contrib.auth.urls')),
+    path('cart/',include('cart.urls')),
+    path('cart_api/',include('cart_api.urls')),
+    path('product/',include('product.urls')),
+    path('product_api/',include('product_api.urls'))
 
 
 ]
